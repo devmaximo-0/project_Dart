@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:http/http.dart' as http;
 
 void main() async {
-  final String token = 'SEU_TOKEN_AQUI';
+  final String token = '8734645709:AAGw7G2Y1dyP_zjmyWErG4yEHvh0QJAMg_M';
 
   print('🚀 Bot iniciado...');
 
@@ -12,7 +12,7 @@ void main() async {
   while (true) {
     try {
       final url = Uri.parse(
-          'https://api.telegram.org/bot$token/getUpdates?offset=$offset');
+          'https://api.telegram.org/bot$8734645709:AAGw7G2Y1dyP_zjmyWErG4yEHvh0QJAMg_M/getUpdates?offset=$offset');
 
       final response = await http.get(url);
 
@@ -32,10 +32,10 @@ void main() async {
             if (texto.isNotEmpty && !texto.startsWith('/')) {
               if (validarCPF(texto)) {
                 await sendMessage(token, chatId,
-                    '✅ O CPF $texto é VÁLIDO!');
+                    '✅ O CPF $texto é VÁLIDO! Até logo');
               } else {
                 await sendMessage(
-                    token, chatId, '❌ O CPF $texto é INVÁLIDO.');
+                    token, chatId, '❌ O CPF $texto é INVÁLIDO. Tente Novamente!');
               }
             }
           }
